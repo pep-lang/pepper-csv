@@ -1,0 +1,1 @@
+invalid/not_utf8.csv:2:3: error: field is not valid UTF-8

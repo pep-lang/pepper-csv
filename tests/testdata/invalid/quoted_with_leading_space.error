@@ -1,0 +1,1 @@
+invalid/quoted_with_leading_space.csv:1:2: error: '"' in an unquoted field; quote the field and double the '"'

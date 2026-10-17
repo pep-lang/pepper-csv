@@ -1,0 +1,1 @@
+invalid/text_after_closing_quote.csv:1:6: error: expected ',' or a line break after the closing '"'
