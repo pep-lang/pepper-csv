@@ -140,6 +140,15 @@ checks it against its `.json` file, writes it back and reads it again, and
 checks that each file of `tests/testdata/invalid` fails with the error in
 its `.error` file. A new tricky case is a new pair of files there.
 
+## Releasing
+
+CI (`.github/workflows/ci.yml`) runs the tests on Linux, macOS and
+Windows for every push to `main` and every pull request. To release, set
+`version` in `pep.toml`, merge, then push the matching tag
+(`git tag v1.0.0 && git push origin v1.0.0`): CI tests the tag and
+publishes a GitHub release for it. `pepper package add` and `pepper
+package update` find versions by their tags.
+
 ## License
 
 Apache-2.0; see [LICENSE](LICENSE).
