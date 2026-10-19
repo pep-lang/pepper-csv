@@ -1,6 +1,6 @@
 # pepper-csv
 
-CSV (RFC 4180) for [Pepper](https://github.com/justinboswell/pepper): read
+CSV (RFC 4180) for [Pepper](https://github.com/pep-lang/pepper): read
 records from a stream or a text, write them back, and convert structs to
 records and back. It has the same shape as the runtime's `json` and `toml`
 modules and the `yaml` package.
@@ -113,14 +113,14 @@ This repository is a package: `pep.toml` marks its root, and its root
 `csv`:
 
 ```sh
-pepper package add justinboswell/pepper-csv --name csv
+pepper package add pep-lang/pepper-csv --name csv
 ```
 
 which writes
 
 ```toml
 [dependencies]
-csv = { github = "justinboswell/pepper-csv" }
+csv = { github = "pep-lang/pepper-csv" }
 ```
 
 Without a project, put a folder named `csv` that holds (or links to) this
