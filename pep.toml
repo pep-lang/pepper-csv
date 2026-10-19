@@ -1,6 +1,6 @@
 [package]
 name = "csv"
-version = "0.1.0"
+version = "1.0.0"
 description = "CSV (RFC 4180): streaming reader, writer, and struct conversion"
 license = "Apache-2.0"
 repository = "https://github.com/pep-lang/pepper-csv"
