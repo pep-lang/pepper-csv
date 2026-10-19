@@ -1,9 +1,9 @@
 # pepper-csv
 
-CSV (RFC 4180) for [Pepper](https://github.com/justinboswell/pepper)
-(issue justinboswell/pepper#948): read records from a stream or a text,
-write them back, and convert structs to records and back. It has the same
-shape as the runtime's `json` and `toml` modules and the `yaml` package.
+CSV (RFC 4180) for [Pepper](https://github.com/justinboswell/pepper): read
+records from a stream or a text, write them back, and convert structs to
+records and back. It has the same shape as the runtime's `json` and `toml`
+modules and the `yaml` package.
 
 One module, **`csv`**:
 
@@ -100,7 +100,7 @@ main(): int {
 ## Limits
 
 - Reading is strict only: there is no lenient mode for malformed files
-  (an open question on #948, left out for safety and simplicity).
+  (left out for safety and simplicity).
 - A record's fields are plain strings: no type inference outside struct
   conversion, and no comment lines.
 - A property that holds a struct, an array or a map is written as its JSON
@@ -139,3 +139,7 @@ repository's root: the reader (`read_test.pep`), the writer
 checks it against its `.json` file, writes it back and reads it again, and
 checks that each file of `tests/testdata/invalid` fails with the error in
 its `.error` file. A new tricky case is a new pair of files there.
+
+## License
+
+Apache-2.0; see [LICENSE](LICENSE).
