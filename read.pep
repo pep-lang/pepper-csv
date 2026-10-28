@@ -210,10 +210,8 @@ export struct Reader {
     ##   error, at the line and column of the field it is about
     read<T>(): Result<T?, CsvError> {
         # An overload rather than a default argument: pepper 0.9.2 resolves
-        # a generic method's default in the caller's module. Both overloads
-        # call `_read`: pepper 0.10.0 miscompiles one generic overload
-        # calling the other (pep-lang/pepper#32).
-        return _read<T>(json.UnknownKeys.Ignore);
+        # a generic method's default in the caller's module.
+        return read<T>(json.UnknownKeys.Ignore);
     }
 
     ## Reads the next record into a `T`, as the other `read` does, with
@@ -225,10 +223,6 @@ export struct Reader {
     ## @returns the value, none at the end of the stream, or the first
     ##   error, at the line and column of the field it is about
     read<T>(unknown_keys: json.UnknownKeys): Result<T?, CsvError> {
-        return _read<T>(unknown_keys);
-    }
-
-    _read<T>(unknown_keys: json.UnknownKeys): Result<T?, CsvError> {
         if (header.is_empty) {
             var names = read_row();
             if (names.is_err()) {
